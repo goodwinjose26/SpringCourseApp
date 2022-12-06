@@ -17,4 +17,10 @@ public class CourseController {
         System.out.println(c.getDuration().toString());
         return  "course added successfully";
     }
+
+@PostMapping("/view")
+    public String view()
+{
+    return "VIEW THE COURSES";
+}
 }
