@@ -25,6 +25,18 @@ public class CourseController {
         return  "course added successfully";
 
     }
+
+
+
+    @CrossOrigin(origins = "*")
+    @PostMapping(path = "/search",consumes = "application/json",produces = "application/json")
+    public List<Course> searchCourse(@RequestBody Course c)
+    {
+        String title=String.valueOf(c.getTitle());
+        System.out.println(title);
+        return (List<Course>) dao.searchCourse(title);
+
+    }
     @CrossOrigin(origins = "*")
 @GetMapping("/view")
     public List<Course> view()
